@@ -1,0 +1,17 @@
+p{
+    color: blueviolet;
+    font-size: 15pt;
+}
+
+#Inicio{
+    color:rgb(219, 15, 15);
+}
+
+#link{
+    color: rgb(30, 30, 133);
+}
+
+a:hover{
+       color: yellow;
+    
+}
