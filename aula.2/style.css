@@ -1,0 +1,12 @@
+body{
+    background-color: rgb(117, 117, 188);
+}
+
+input{
+    color: rgba(154, 2, 255, 0.715);
+    border: 3px solid rgb(8, 15, 121);
+    position: absolute;
+    top: 50px;  
+    left: 900px;
+}
+
