@@ -1,0 +1,8 @@
+.flex-container{
+    display: flex;
+    background-color: azure;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-content: space-between;
+    align-items: stretch;
+}

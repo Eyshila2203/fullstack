@@ -1,0 +1,17 @@
+/* Centraliza o canvas na página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0; /* Cor de fundo da página */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do quadro de desenho */
+canvas {
+    background-color: white;
+    border: 1px solid #000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}

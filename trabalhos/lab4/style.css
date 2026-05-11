@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Kablammo&display=swap');
+
+body {
+    background-color: #b485ff;
+    transition: background-color 0.5s; /* Ajustado de 0.5ms para 0.5s para ser visível */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Empilha os itens (título em cima, container embaixo) */
+    align-items: center;    /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente no meio da tela */
+    min-height: 100vh;      /* Garante que o corpo ocupe a altura toda da tela */
+}
+
+.Kablammo {
+    font-family: "Kablammo", system-ui;
+    color: beige;
+    font-size: 40px; 
+    text-align: center;
+    margin-bottom: 50px; 
+    text-shadow: 0 0 7px #d1e7f4, 0 0 15px #6c4fff, 0 0 25px #6c4fff;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    display: flex;
+    gap: 10px; 
+    padding: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 3px solid rgb(230, 187, 255);
+    flex-direction: row;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #8d59dd;
+    color: beige;
+    border: 3px solid rgb(230, 187, 255);
+    border-radius: 4px;
+    text-shadow: 0 0 5px #6c4fff;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #b6c9f5;
+    color: #6e86e8;
+}
