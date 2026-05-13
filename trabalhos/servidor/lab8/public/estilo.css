@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Kavoon&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('fundo.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+}
+
+.h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    text-align: center;
+    flex-direction: column;
+}
+
+.container {
+  background-color: rgba(253, 245, 230, 0.9);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(178, 74, 239, 0.474);
+  border: 2px solid #5820a6;
+  width: 400px;
+}
+
+.kavoon {
+  font-family: "Kavoon", serif;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: rgb(130, 77, 215);
+  text-shadow: 0 5px 10px #7885e6;
+}
+
+input[type="text"], input[type="date"] {
+  border: none;
+  border-bottom: 1px solid #354deb;
+  background: transparent;
+  width: 100%;
+  padding: 6px;
+  font-family: 'serif';
+}
+
+.btn-salvar {
+  background-color: #1d4e89;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
