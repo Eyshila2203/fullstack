@@ -1,16 +1,27 @@
-<h2>Página de Login</h2>
-
-<form action="login.html" method="POST">  
-    <div>
-        <label for="usuario">Usuário:</label><br>
-        <input type="text" id="usuario" name="usuario" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container"> 
+        <div class="kavoon"> 
+            <h1>Servidor</h1>
+        </div>
+        <div class="h2">
+            <h2>Formulário</h2>
+            <h2>Login usuário</h2>
+        </div>
+        <div class="p">
+            <form action="/logar" method="POST">
+                <p><input type="text" name="login" placeholder="Digite seu login" required></p>
+                <p><input type="password" name="senha" placeholder="Digite sua senha" required></p>
+                <button type="submit">Logar</button>
+            </form>
+        </div>
     </div>
-    <br>
-    <div>
-        <label for="senha">Senha:</label><br>
-        <input type="password" id="senha" name="senha" required>
-    </div>
-    <br>
-    <button type="submit">Entrar</button>
-</form>
-<p>Não tem conta? <a href="cadastro.html">Cadastre-se aqui</a></p>
+</body>
+</html>

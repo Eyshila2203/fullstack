@@ -53,6 +53,15 @@ input[type="text"], input[type="date"] {
   font-family: 'serif';
 }
 
+input {
+  border: none;
+  border-bottom: 1px solid #354deb;
+  background: transparent;
+  width: 100%;
+  padding: 6px;
+  font-family: 'serif';
+}
+
 .btn-salvar {
   background-color: #1d4e89;
   color: white;
@@ -62,4 +71,23 @@ input[type="text"], input[type="date"] {
   cursor: pointer;
   width: 100%;
   margin-top: 20px;
+}
+
+.btn-logar{
+  background-color: #1d4e89;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sucesso {
+    color: green;
+}
+
+.erro {
+    color: red;
 }

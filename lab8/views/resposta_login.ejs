@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>servidor-get-post-template</title>
+    <link href="/estilo.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="<%= sucesso ? 'sucesso' : 'erro' %>">
+            <%= titulo %>
+        </h2>
+        
+        <p><%= mensagem %></p>
+        
+        <br>
+        <a href="/"><button>PROJETOS</button></a> | 
+        <a href="/login">Fazer Login</a>
+    </div>
+</body>
+</html>
