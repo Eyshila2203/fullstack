@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="public/estilo.css">
+</head>
+<body>
+    <header>
+        <h1>PORTFÓLIO</h1>
+        <nav>
+            <a href="/">Projetos</a>
+            <a href="/login">Login</a>
+            <a href="/cadastro-usuario">Cadastro</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card" style="margin-top: 3rem;">
+            <h2>LOGIN</h2>
+            <form action="/logar" method="POST">
+                <div class="form-group">
+                    <label>Login</label>
+                    <input type="text" name="login" placeholder="Nome de usuário" required>
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" name="senha" placeholder="Sua senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top: 1rem;">Entrar</button>
+            </form>
+            <p class="text-center mt-1">Não tem conta? <a href="/cadastro-usuario" class="link">Cadastrar</a></p>
+        </div>
+    </div>
+</body>
+</html>

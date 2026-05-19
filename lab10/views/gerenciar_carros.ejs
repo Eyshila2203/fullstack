@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerência de Carros</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Gerenciamento de Estoque</h1>
+
+    <h3>Cadastrar Novo Carro</h3>
+    <form action="/carro/novo" method="POST">
+        <input type="text" name="marca" placeholder="Marca" required>
+        <input type="text" name="modelo" placeholder="Modelo" required>
+        <input type="number" name="ano" placeholder="Ano" required>
+        <input type="number" name="qtde" placeholder="Quantidade" required>
+        <button type="submit" class="btn-vender">Adicionar Carro</button>
+    </form>
+
+    <hr width="100%">
+
+    <table>
+        <tr>
+            <th>Marca</th> <th>Modelo</th> <th>Ano</th> <th>Estoque</th> <th>Ações</th>
+        </tr>
+        <% carros.forEach(carro => { %>
+            <tr>
+                <td><%= carro.marca %></td>
+                <td><%= carro.modelo %></td>
+                <td><%= carro.ano %></td>
+                <td>
+                    <% if(carro.qtde_disponivel <= 0) { %>
+                        <span class="esgotado">ESGOTADO</span>
+                    <% } else { %>
+                        <%= carro.qtde_disponivel %>
+                    <% } %>
+                </td>
+                <td>
+                    <% if(carro.qtde_disponivel > 0) { %>
+                        <a href="/carro/vender/<%= carro._id %>" class="btn btn-vender">Vender</a>
+                    <% } %>
+                    <a href="/carro/remover/<%= carro._id %>" class="btn btn-remover">Remover</a>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+    <br>
+    <a href="/" style="color: lightblue;">Voltar para Projetos</a>
+</body>
+</html>
