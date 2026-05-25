@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar plantas</title>
+    <link rel="stylesheet" href="/estufa/public/pointdocss/css_resposta/resposta.css">
+</head>
+<body>
+    <div class="container">
+        <div class="florzinha">
+            <h2>EDITAR PLANTA</h2>
+            <form action="/plantas/atualizar/<%= plantas._id %>" method="POST">
+                <div class="especie">
+                    <label>especie</label>
+                    <input type="text" name="especie" value="<%= plantas.especie %>" required>
+                </div>
+                <div class="cor">
+                    <label>cor</label>
+                    <input type="text" name="cor" value="<%= plantas.cor %>" required>
+                </div>
+                <div class="plantio">
+                    <label>plantio</label>
+                    <input type="number" name="plantio" value="<%= plantas.plantio %>" required>
+                </div>
+                <div class="status">
+                    <label>status</label>
+                    <input type="text" name="status" value="<%= plantas.status %>" required>
+                </div>
+                <div class="ultima">
+                    <label>ultima_rega</label>
+                    <input type="text" name="ultima_rega" value="<%= plantas.ultima_rega %>" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full" style="margin-top: 1rem;">Salvar Alterações</button>
+            </form>
+            <p class="text-center mt-1"><a href="/plantas" class="link">← Voltar</a></p>
+        </div>
+    </div>
+</body>
+</html>

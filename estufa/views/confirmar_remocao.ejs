@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>ConfirmarRemocao</title>
+    <link rel="stylesheet" href="/estufa/public/pointdocss/css_resposta/resposta.css">
+</head>
+<body>
+    <div class="container">
+        <div class="titulos">
+            <h1>Aviso de Remoção ⚠️</h1>
+            <div class="p">
+            <p>
+                Você está prestes a remover a planta da espécie: <strong><%= planta.especie %></strong>.
+            </p>
+            </div>
+            <form action="/plantas/remover/<%= planta._id %>" method="POST">
+                
+                <div class="texto">
+                    <label for="motivo">Motivo Principal:</label>
+                    <select name="motivo" id="motivo" required>
+                        <option value="">-- Selecione um motivo --</option>
+                        <option value="Secou / Morreu">Secou ou Morreu 🍂</option>
+                        <option value="Praga Incontrolável">Ataque de Pragas 🐛</option>
+                        <option value="Doada / Vendida">Foi Doada ou Vendida 🎁</option>
+                        <option value="Erro de Cadastro">Erro ao cadastrar ❌</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="detalhe_motivo">Detalhes Adicionais (Opcional):</label>
+                    <textarea name="detalhe_motivo" id="detalhe_motivo" rows="3" placeholder="Ex: Apresentou fungos nas folhas..."></textarea>
+                </div>
+
+                <div>
+                    <a href="/plantas">Cancelar</a>
+                    <button type="submit">Confirmar Remoção</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

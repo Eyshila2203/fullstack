@@ -1,0 +1,78 @@
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('fundo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(253, 251, 251, 0.5); 
+  color: #000000;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(237, 237, 237, 0.474);
+  border: 2px solid #edf43c;
+  width: 400px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #edf43c;
+  background: transparent;
+  width: 100%;
+  padding: 6px;
+  font-family: 'serif';
+}
+
+.btn {
+  background-color: #f6fab2;
+  color: rgb(233, 102, 172);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn:hover{
+    background-color: #e7f274;
+}
+
+.btn2 {
+  background-color: #f4fab2;
+  color: rgb(233, 102, 172);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn2:hover{
+    background-color: #e7f274;
+}
+
+.titulos{
+    font-size: 15px;
+}
+
+.nome{
+    font-size: 15px;
+}
+
+.senha{
+    font-size: 15px;
+}
+
+.email{
+    font-size: 15px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo-jardineiro-estufei</title>
+    <link rel="stylesheet" href="../public/pointdocss/css_inicial/estilo.css">
+</head>
+<body>
+    <div class="container">
+        <div class="titulos">
+            <h1>FAÇA SEU CADASTRO NA ESTUFEI</h1>
+            <h3>AQUI VOCÊ MONITORA A SUA PLANTINHA EM TEMPO REAL</h3>
+            <br>
+
+            <form action="/cadastrar_jardineiro" method="POST">
+                <div class="nome">
+                    <label>Nome</label>
+                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                </div>
+                <div class="email">
+                    <label>Email</label>
+                    <input type="text" name="email" placeholder="Email" required>
+                </div>
+                <div class="senha">
+                    <label>Senha</label>
+                    <input type="password" name="senha" placeholder="Sua senha" required>
+                </div>
+                <div class="entrar">
+                    <button type="submit" class="btn btn-primary btn-full">Cadastrar jardineiro</button>
+                </div>
+
+            </form>
+            <div class="Login-estufei">
+            <p class="text-center mt-1">Já tem conta? <a href="/login" class="btn2">Login estufei</a></p> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

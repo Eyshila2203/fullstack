@@ -1,0 +1,120 @@
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url('resposta.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: rgba(253, 251, 251, 0.6); 
+  color: #000000;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 20px 30px rgba(237, 237, 237, 0.474);
+  border: 2px solid #edf43c;
+  width: 400px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid #edf43c;
+  background: transparent;
+  width: 100%;
+  padding: 6px;
+  font-family: 'serif';
+}
+
+.btn {
+  background-color: #f6fab2;
+  color: rgb(233, 102, 172);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn:hover{
+    background-color: #e7f274;
+}
+
+.btn2 {
+  background-color: #f4fab2;
+  color: rgb(233, 102, 172);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn2:hover{
+    background-color: #e7f274;
+}
+
+.titulos{
+    font-size: 15px;
+}
+
+.nome{
+    font-size: 15px;
+}
+
+.senha{
+    font-size: 15px;
+}
+
+.email{
+    font-size: 15px;
+}
+
+.p{
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.texto{
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/* 2. Configuração da Tabela Brilhante */
+.tabela {
+    width: 100%;
+    border-collapse: collapse; /* Mude para collapse para as linhas divisórias funcionarem bem */
+    margin: 2rem 0;
+    border: 3px solid transparent;
+    border-image: linear-gradient(45deg, #ff007f, #ffeb3b) 1;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+/* 3. Cabeçalho com letras legíveis */
+.tabela th {
+    background: linear-gradient(45deg, #ff007f, #ffeb3b);
+    color: #000000; /* Texto preto para destacar no amarelo/rosa */
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+/* 4. COLOCANDO AS LINHAS: Estilização das células e linhas divisórias */
+.tabela td {
+    padding: 15px;
+    color: #ffffff; 
+    border-bottom: 1px solid #e7f274; 
+}
+
+/* 5. Efeito visual opcional: Destaca a linha inteira ao passar o mouse */
+.tabela tbody tr:hover {
+    background-color: #e7f274;
+}

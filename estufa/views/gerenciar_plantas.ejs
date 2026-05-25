@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar Estufa de Plantas</title>
+    <link rel="stylesheet" href="/estufa/public/pointdocss/css_resposta/resposta.css">
+</head>
+<body>
+    <div class="container">
+        <div class="titulos">ADICIONAR PLANTA</div>
+        <form action="/planta/nova" method="POST" class="inline-form">
+            <div class="especie">
+                <label>Espécie</label>
+                <input type="text" name="especie" placeholder="Ex: Orquídea" required>
+            </div>
+            <div class="cor">
+                <label>Cor</label>
+                <input type="text" name="cor" placeholder="Ex: Roxo" required>
+            </div>
+            <div class="plantio">
+                <label>Plantio (Ano)</label>
+                <input type="number" name="plantio" placeholder="Ex: 2024" min="2000" max="2026" required>
+            </div>
+            <div class="status">
+                <label>Status</label>
+                <input type="text" name="status" placeholder="Ex: Saudável" required>
+            </div>
+            <div class="rega">
+                <label>Última Rega</label>
+                <input type="text" name="ultima_rega" placeholder="Ex: Hoje cedo, 2 dias atrás" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Adicionar</button>
+        </form>
+        <br>
+        <div class="titulos">PLANTAS DISPONÍVEIS</div>
+        
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Espécie</th>
+                    <th>Cor</th>
+                    <th>Plantio</th>
+                    <th>Status</th>
+                    <th>Última Rega</th>
+                    <th style="text-align: center;">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (plantas.length === 0) { %>
+                <tr>
+                    <td colspan="6" style="text-align:center; color: #888; padding: 2rem;">
+                        Nenhuma planta cadastrada ainda.
+                    </td>
+                </tr>
+                <% } %>
+                
+                <% plantas.forEach(function(planta) { %>
+                <tr>
+                    <td><strong><%= planta.especie %></strong></td>
+                    <td><%= planta.cor %></td>
+                    <td><%= planta.plantio %></td>
+                    <td><span class="badge-ok"><%= planta.status %></span></td>
+                    <td><%= planta.ultima_rega %></td>
+                    
+                    <td>
+                        <div class="btn3">
+                            <a href="/plantas/regar/<%= planta._id %>" class="btn btn-success">Regar</a>
+                            <a href="/plantas/editar/<%= planta._id %>" class="btn btn-primary">Editar</a>
+                            <a href="/plantas/remover/<%= planta._id %>" class="btn btn-danger" onclick="return confirm('Remover esta planta?')">Remover</a>
+                        </div>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        </div>
+    </div>
+</body>
+</html>

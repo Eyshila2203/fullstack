@@ -1,0 +1,19 @@
+{
+  "name": "estufa",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Eyshila",
+  "type": "commonjs",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.2.0",
+    "save": "^2.9.0"
+  }
+}
