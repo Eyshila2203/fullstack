@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos - Mercado</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🛒 Mercado</span>
+  <a href="/projects">Projetos</a>
+  <a href="/produtos">Ver Produtos</a>
+  <% if (usuario) { %>
+    <a href="/produtos/gerencia">Gerência</a>
+    <a href="/usuarios/logout">Sair (<%= usuario.nome %>)</a>
+  <% } else { %>
+    <a href="/usuarios/login">Login</a>
+    <a href="/usuarios/cadastro">Cadastro</a>
+  <% } %>
+</nav>
+
+<div class="container">
+  <h1>🛒 Produtos Disponíveis</h1>
+
+  <% if (produtos.length === 0) { %>
+    <p>Nenhum produto cadastrado ainda.</p>
+  <% } else { %>
+    <div class="cards">
+      <% produtos.forEach(function(p) { %>
+        <div class="card">
+          <div class="icone">🏷️</div>
+          <h3><%= p.nome %></h3>
+          <p><strong>Categoria:</strong> <%= p.categoria %></p>
+          <p><strong>Marca:</strong> <%= p.marca %></p>
+          <p class="preco">R$ <%= p.preco.toFixed(2) %></p>
+
+          <% if (p.qtde_disponivel === 0) { %>
+            <span class="esgotado">ESGOTADO</span>
+          <% } else { %>
+            <span class="disponivel"><%= p.qtde_disponivel %> em estoque</span>
+          <% } %>
+        </div>
+      <% }); %>
+    </div>
+  <% } %>
+</div>
+
+</body>
+</html>

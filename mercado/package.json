@@ -1,0 +1,15 @@
+{
+  "name": "mercado",
+  "version": "1.0.0",
+  "description": "Sistema de gerenciamento de Mercado",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0",
+    "express-session": "^1.17.3"
+  }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerência de Produtos - Mercado</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🛒 Mercado</span>
+  <a href="/projects">Projetos</a>
+  <a href="/produtos">Ver Produtos</a>
+  <a href="/produtos/gerencia">Gerência</a>
+  <a href="/usuarios/logout">Sair (<%= usuario.nome %>)</a>
+</nav>
+
+<div class="container">
+  <h1>Gerência de Produtos</h1>
+
+  <!-- CADASTRAR NOVO PRODUTO -->
+  <div class="secao-cadastro">
+    <h2>Cadastrar novo produto</h2>
+    <form method="POST" action="/produtos/cadastrar">
+      <div class="campos">
+        <div>
+          <label>Nome</label>
+          <input type="text" name="nome" placeholder="Ex: Arroz Tipo 1" required>
+        </div>
+        <div>
+          <label>Categoria</label>
+          <select name="categoria" required>
+            <option value="">Selecione</option>
+            <option value="Alimentos">Alimentos</option>
+            <option value="Bebidas">Bebidas</option>
+            <option value="Limpeza">Limpeza</option>
+            <option value="Higiene">Higiene</option>
+            <option value="Hortifruti">Hortifruti</option>
+            <option value="Frios">Frios</option>
+            <option value="Padaria">Padaria</option>
+            <option value="Outros">Outros</option>
+          </select>
+        </div>
+        <div>
+          <label>Marca</label>
+          <input type="text" name="marca" placeholder="Ex: Tio João" required>
+        </div>
+        <div>
+          <label>Preço (R$)</label>
+          <input type="number" name="preco" min="0" step="0.01" placeholder="0.00" required>
+        </div>
+        <div>
+          <label>Qtde em estoque</label>
+          <input type="number" name="qtde_disponivel" min="0" placeholder="1" required>
+        </div>
+      </div>
+      <div class="mt">
+        <button type="submit" class="btn btn-laranja">+ Cadastrar Produto</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- TABELA DE PRODUTOS -->
+  <h2>Produtos cadastrados</h2>
+
+  <% if (produtos.length === 0) { %>
+    <p>Nenhum produto cadastrado ainda.</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Categoria</th>
+          <th>Marca</th>
+          <th>Preço</th>
+          <th>Estoque</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% produtos.forEach(function(p) { %>
+          <tr>
+            <td><%= p.nome %></td>
+            <td><%= p.categoria %></td>
+            <td><%= p.marca %></td>
+            <td>R$ <%= p.preco.toFixed(2) %></td>
+            <td>
+              <% if (p.qtde_disponivel === 0) { %>
+                <span class="esgotado">ESGOTADO</span>
+              <% } else { %>
+                <%= p.qtde_disponivel %>
+              <% } %>
+            </td>
+            <td>
+              <div class="acoes">
+
+                <a href="/produtos/editar/<%= p._id %>" class="btn btn-amarelo">Editar</a>
+
+                <form method="POST" action="/produtos/vender/<%= p._id %>">
+                  <button type="submit" class="btn btn-azul"
+                    <% if (p.qtde_disponivel === 0) { %>disabled style="opacity:0.5;cursor:not-allowed"<% } %>>
+                    Vender
+                  </button>
+                </form>
+
+                <form method="POST" action="/produtos/remover/<%= p._id %>"
+                  onsubmit="return confirm('Remover este produto?')">
+                  <button type="submit" class="btn btn-vermelho">Remover</button>
+                </form>
+
+              </div>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+</body>
+</html>
