@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Pet Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🐾 Pet Shop</span>
+  <a href="/projects">Projetos</a>
+  <a href="/pets">Ver Pets</a>
+  <% if (usuario) { %>
+    <a href="/pets/gerencia">Gerência</a>
+    <a href="/usuarios/logout">Sair (<%=usuario.nome%>)</a>
+  <% } else { %>
+    <a href="/usuarios/login">Login</a>
+    <a href="/usuarios/cadastro">Cadastro</a>
+  <% } %>
+</nav>
+
+<div class="container">
+  <h1>Login</h1>
+
+  <div class="form-box">
+
+    <% if (erro) { %>
+      <div class="alerta-erro"><%= erro %></div>
+    <% } %>
+
+    <form method="POST" action="/usuarios/login">
+
+      <label>Login</label>
+      <input type="text" name="login" placeholder="Seu login" required>
+
+      <label>Senha</label>
+      <input type="password" name="senha" placeholder="Sua senha" required>
+
+      <button type="submit" class="btn btn-verde" style="width:100%">Entrar</button>
+
+    </form>
+
+    <p style="margin-top:16px; text-align:center; font-size:14px;">
+      Não tem conta? <a href="/usuarios/cadastro">Cadastrar</a>
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>

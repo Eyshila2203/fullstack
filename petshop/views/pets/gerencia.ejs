@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerência de Pets - Pet Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🐾 Pet Shop</span>
+  <a href="/projects">Projetos</a>
+  <a href="/pets">Ver Pets</a>
+  <a href="/pets/gerencia">Gerência</a>
+  <a href="/usuarios/logout">Sair (<%= usuario.nome %>)</a>
+</nav>
+
+<div class="container">
+  <h1>Gerência de Pets</h1>
+
+  <!-- FORMULÁRIO CADASTRAR NOVO PET -->
+  <div class="secao-cadastro">
+    <h2>Cadastrar novo pet</h2>
+
+    <form method="POST" action="/pets/cadastrar">
+      <div class="campos">
+        <div>
+          <label>Espécie</label>
+          <input type="text" name="especie" placeholder="Ex: Cão, Gato" required>
+        </div>
+        <div>
+          <label>Raça</label>
+          <input type="text" name="raca" placeholder="Ex: Labrador" required>
+        </div>
+        <div>
+          <label>Idade (anos)</label>
+          <input type="number" name="idade" min="0" placeholder="0" required>
+        </div>
+        <div>
+          <label>Quantidade</label>
+          <input type="number" name="qtde_disponivel" min="0" placeholder="1" required>
+        </div>
+        <div>
+          <label>Preço (R$)</label>
+          <input type="number" name="preco" min="0" step="0.01" placeholder="0.00" required>
+        </div>
+      </div>
+      <div class="mt">
+        <button type="submit" class="btn btn-verde">+ Cadastrar Pet</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- TABELA DE PETS -->
+  <h2>Pets cadastrados</h2>
+
+  <% if (pets.length === 0) { %>
+    <p>Nenhum pet cadastrado ainda.</p>
+  <% } else { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Espécie</th>
+          <th>Raça</th>
+          <th>Idade</th>
+          <th>Qtde</th>
+          <th>Preço</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pets.forEach(function(pet) { %>
+          <tr>
+            <td><%= pet.especie %></td>
+            <td><%= pet.raca %></td>
+            <td><%= pet.idade %> ano(s)</td>
+            <td>
+              <% if (pet.qtde_disponivel === 0) { %>
+                <span class="esgotado">ESGOTADO</span>
+              <% } else { %>
+                <%= pet.qtde_disponivel %>
+              <% } %>
+            </td>
+            <td>R$ <%= pet.preco.toFixed(2) %></td>
+            <td>
+              <div class="acoes">
+
+                <!-- Editar -->
+                <a href="/pets/editar/<%= pet._id %>" class="btn btn-amarelo">Editar</a>
+
+                <!-- Vender -->
+                <form method="POST" action="/pets/vender/<%= pet._id %>">
+                  <button type="submit" class="btn btn-azul"
+                    <% if (pet.qtde_disponivel === 0) { %>disabled style="opacity:0.5;cursor:not-allowed"<% } %>>
+                    Vender
+                  </button>
+                </form>
+
+                <!-- Remover -->
+                <form method="POST" action="/pets/remover/<%= pet._id %>"
+                  onsubmit="return confirm('Remover este pet?')">
+                  <button type="submit" class="btn btn-vermelho">Remover</button>
+                </form>
+
+              </div>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } %>
+</div>
+
+</body>
+</html>

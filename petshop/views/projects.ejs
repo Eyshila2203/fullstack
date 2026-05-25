@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projetos - Pet Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🐾 Pet Shop</span>
+  <a href="/projects">Projetos</a>
+  <a href="/pets">Ver Pets</a>
+  <% if (usuario) { %>
+    <a href="/pets/gerencia">Gerência</a>
+    <a href="/usuarios/logout">Sair (<%=usuario.nome%>)</a>
+  <% } else { %>
+    <a href="/usuarios/login">Login</a>
+    <a href="/usuarios/cadastro">Cadastro</a>
+  <% } %>
+</nav>
+
+<div class="container">
+  <h1>Projetos</h1>
+
+  <div class="tabela-projetos">
+    <table>
+      <thead>
+        <tr>
+          <th>Projeto</th>
+          <th>Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cadastro de Usuário</td>
+          <td><a href="/usuarios/cadastro">Acessar</a></td>
+        </tr>
+        <tr>
+          <td>Login de Usuário</td>
+          <td><a href="/usuarios/login">Acessar</a></td>
+        </tr>
+        <tr>
+          <td>Listagem de Pets</td>
+          <td><a href="/pets">Acessar</a></td>
+        </tr>
+        <tr>
+          <td>Gerência de Pets</td>
+          <td><a href="/pets/gerencia">Acessar</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Pet - Pet Shop</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<nav>
+  <span class="logo">🐾 Pet Shop</span>
+  <a href="/projects">Projetos</a>
+  <a href="/pets">Ver Pets</a>
+  <a href="/pets/gerencia">Gerência</a>
+  <a href="/usuarios/logout">Sair (<%= usuario.nome %>)</a>
+</nav>
+
+<div class="container">
+  <h1>Editar Pet</h1>
+
+  <div class="form-box" style="max-width:500px">
+    <form method="POST" action="/pets/atualizar/<%= pet._id %>">
+
+      <label>Espécie</label>
+      <input type="text" name="especie" value="<%= pet.especie %>" required>
+
+      <label>Raça</label>
+      <input type="text" name="raca" value="<%= pet.raca %>" required>
+
+      <label>Idade (anos)</label>
+      <input type="number" name="idade" value="<%= pet.idade %>" min="0" required>
+
+      <label>Quantidade disponível</label>
+      <input type="number" name="qtde_disponivel" value="<%= pet.qtde_disponivel %>" min="0" required>
+
+      <label>Preço (R$)</label>
+      <input type="number" name="preco" value="<%= pet.preco %>" min="0" step="0.01" required>
+
+      <div style="display:flex; gap:10px; margin-top:6px">
+        <button type="submit" class="btn btn-verde">Salvar alterações</button>
+        <a href="/pets/gerencia" class="btn btn-amarelo">Cancelar</a>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
